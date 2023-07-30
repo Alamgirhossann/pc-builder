@@ -1,0 +1,19 @@
+.form {
+    width: 30%;
+    height: 150px;
+    border-radius: 10px;
+    background: #090928;
+    margin: 8% auto;
+    padding: 20px;
+    text-align: center;
+    color: white
+}
+
+
+.social_icons {
+    width: 30%;
+    font-size: 40px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
