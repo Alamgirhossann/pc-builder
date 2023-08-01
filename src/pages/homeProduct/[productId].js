@@ -54,7 +54,7 @@ productDetailPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/pcData");
+  const res = await fetch("https://pc-builder-server-sand.vercel.app/pcData");
   const data = await res.json();
 
   const paths = data.map((product) => ({
@@ -67,7 +67,9 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   console.log(params.productId);
-  const res = await fetch(`http://localhost:5000/pcData/${params.productId}`);
+  const res = await fetch(
+    `https://pc-builder-server-sand.vercel.app/pcData/${params.productId}`
+  );
   const data = await res.json();
 
   return {

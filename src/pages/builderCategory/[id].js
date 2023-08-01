@@ -17,7 +17,9 @@ categoryProductDetail.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async (context) => {
   const { params } = context;
-  const res = await fetch(`http://localhost:5000/filter/${params.id}`);
+  const res = await fetch(
+    `https://pc-builder-server-sand.vercel.app/filter/${params.id}`
+  );
   const data = await res.json();
   console.log(data);
 

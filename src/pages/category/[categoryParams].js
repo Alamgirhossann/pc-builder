@@ -16,7 +16,7 @@ categoryProductDetail.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`http://localhost:5000/pcData`);
+  const res = await fetch(`https://pc-builder-server-sand.vercel.app/pcData`);
   const data = await res.json();
 
   const paths = data.map((product) => ({
@@ -30,7 +30,7 @@ export const getStaticProps = async (context) => {
   const { params } = context;
   console.log(params.categoryParams);
   const res = await fetch(
-    `http://localhost:5000/filter/${params.categoryParams}`
+    `https://pc-builder-server-sand.vercel.app/filter/${params.categoryParams}`
   );
   const data = await res.json();
   console.log(data);

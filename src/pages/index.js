@@ -4,21 +4,6 @@ import dynamic from "next/dynamic";
 import RootLayout from "@/components/Layout/Layout";
 
 const Home = ({ alldata }) => {
-  // const showRandomData = (dataArray, numberOfItemsToShow) => {
-  //   const selectedData = [];
-  //   while (selectedData.length < numberOfItemsToShow) {
-  //     const randomIndex = Math.floor(Math.random() * dataArray.length);
-  //     if (!selectedData.includes(randomIndex)) {
-  //       selectedData.push(randomIndex);
-  //     }
-  //   }
-  //   const randomDataItems = selectedData.map((index) => dataArray[index]);
-  //   return randomDataItems;
-  // };
-
-  // const filteredData = showRandomData(alldata, 6);
-  // console.log(filteredData)
-
   const BannerComponent = dynamic(() => import("@/components/UI/Banner"), {
     loading: () => <p>Loading...</p>,
     ssr: false,
@@ -44,7 +29,7 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/pcData");
+  const res = await fetch("https://pc-builder-server-sand.vercel.app/pcData");
   const data = await res.json();
   const showRandomData = (dataArray, numberOfItemsToShow) => {
     const selectedData = [];
