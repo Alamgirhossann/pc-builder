@@ -1,11 +1,6 @@
 import { Card, Col, Row } from "antd";
 import Image from "next/image";
-import {
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CommentOutlined,
-  ProfileOutlined,
-} from "@ant-design/icons";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 const AllNews = ({ alldata }) => {
@@ -34,14 +29,14 @@ const AllNews = ({ alldata }) => {
         }}
       >
         {alldata?.map((data) => (
-          <Col key={data.id} className="gutter-row" span={6}>
+          <Col key={data.id} className="gutter-row" span={8}>
             <Card
               hoverable
               cover={
                 <Image
                   src={data?.image}
                   width={500}
-                  height={200}
+                  height={100}
                   responsive
                   alt="news image"
                 />

@@ -46,9 +46,22 @@ Home.getLayout = function getLayout(page) {
 export const getStaticProps = async () => {
   const res = await fetch("http://localhost:5000/pcData");
   const data = await res.json();
+  const showRandomData = (dataArray, numberOfItemsToShow) => {
+    const selectedData = [];
+    while (selectedData.length < numberOfItemsToShow) {
+      const randomIndex = Math.floor(Math.random() * dataArray.length);
+      if (!selectedData.includes(randomIndex)) {
+        selectedData.push(randomIndex);
+      }
+    }
+    const randomDataItems = selectedData.map((index) => dataArray[index]);
+    return randomDataItems;
+  };
+
+  const filteredData = showRandomData(data, 6);
   return {
     props: {
-      alldata: data,
+      alldata: filteredData,
     },
     // revalidate: 10,
   };
