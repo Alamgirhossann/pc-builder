@@ -8,7 +8,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "https://pc-builder-alamgirhossann.vercel.app/login",
+    signIn: "/login",
   },
 };
 export default NextAuth(authOptions);
